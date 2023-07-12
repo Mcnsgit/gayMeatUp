@@ -11,7 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "bearer": "^0.0.20",
+    "events": "^3.3.0",
     "express": "^4.18.2",
+    "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.3",

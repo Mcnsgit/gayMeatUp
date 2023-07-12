@@ -1,15 +1,18 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Navbar = ({ title, onBackPress }) => (
-    <View style={styles.container}>
-        {onBackPress && <TouchableOpacity style={styles.backButton} onPress={onBackPress}>
-            <Text style={styles.backButtonText}>Back</Text>
-        </TouchableOpacity>}
-        <Text style={styles.title}>{title}</Text>
-    </View>
-);
-
+const Navbar = ({ title, onBackPress }) => {
+    return (
+        <View style={styles.container}>
+            {onBackPress && (
+                <TouchableOpacity style={styles.backButton} onPress={onBackPress}>
+                    <Text style={styles.backButtonText}>Back</Text>
+                </TouchableOpacity>
+            )}
+            <Text style={styles.title}>{title}</Text>
+        </View>
+    );
+};
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#FFFFFF',
