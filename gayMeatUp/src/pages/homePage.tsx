@@ -1,39 +1,54 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react';
+import { Text, View, Button } from 'react-native';
 import UserProfile from '../components/JS/UserProfile';
+
 function NavigationBar() { 
+
     const handleMenuClick = () => { 
-        // handle menu button click 
-    } 
+        console.log("Menu button clicked");
+        // Here would go the logic to open the drawer or side menu
+    }
+
     const handleSearchClick = () => { 
-        // handle search button click 
-    } 
+        console.log("Search button clicked");
+        // Here would go the logic to open the search input or navigate to the search screen
+    }
+
     return ( 
-        <div> 
-            <button onClick={handleMenuClick}>Menu</button> 
-            <button onClick={handleSearchClick}>Search</button> 
-        </div> 
+        <View> 
+            <Button title="Menu" onPress={handleMenuClick} /> 
+            <Button title="Search" onPress={handleSearchClick} /> 
+        </View> 
     ); 
 } 
-
 
 function FooterBar() { 
+
     const handleUsersClick = () => { 
-        // handle users button click 
-    } 
+        console.log("Users button clicked");
+        // Here would go the logic to navigate to the users screen
+    };
+
     const handleMeetClick = () => { 
-        // handle meet button click 
-    } 
+        console.log("Meet button clicked");
+        // Here would go the logic to navigate to the meet screen
+    };
+
     const handleChatClick = () => { 
-        // handle chat button click 
-    } 
+        console.log("Chat button clicked");
+        // Here would go the logic to navigate to the chat screen
+    }
+
     return ( 
-        <div> 
-            <button onClick={handleUsersClick}>Users</button> 
-            <button onClick={handleMeetClick}>Meet</button> 
-            <button onClick={handleChatClick}>Chat</button> 
-        </div> 
+        <View> 
+            <Button title="Users" onPress={handleUsersClick} /> 
+            <Button title="Meet" onPress={handleMeetClick} /> 
+            <Button title="Chat" onPress={handleChatClick} /> 
+        </View> 
     ); 
-} 
+}
+
+
 function HomePage() { 
     const [users, setUsers] = useState([]); 
     const fetchUsers = async () => { 
@@ -49,9 +64,9 @@ function HomePage() {
         fetchUsers(); 
     }, []); 
     return ( 
-        <div> 
+        <View> 
             <NavigationBar /> 
-            <div> 
+            <View> 
                 {users.map((user: {
                     id: React.Key | null | undefined;
                     name: string;
@@ -62,9 +77,9 @@ function HomePage() {
                 }) => ( 
                     <UserProfile key={user.id} user={user} /> 
                 ))} 
-            </div> 
+            </View> 
             <FooterBar /> 
-        </div> 
+        </View> 
     ); 
 }
 
