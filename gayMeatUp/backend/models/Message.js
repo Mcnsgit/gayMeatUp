@@ -1,6 +1,4 @@
-export default User;
-
-class MessageChannel {
+export default class MessageChannel {
     constructor() {
         this.subscribers = {};
     }
@@ -32,19 +30,11 @@ class MessageChannel {
     }
 }
 
-
-// To use this class, you can create a new instance and call its methods as needed
-subscribe(eventType, callback) /* adds a new subscriber to the channel for a specific event type. The subscriber will receive any messages published to that event type.*/
-unsubscribe(eventType, callback)/* removes a subscriber from the channel for a specific event type.*/
-publish(eventType, data) /* sends a message to all subscribers of a specific event type, passing along any data provided.*/
-
-// To use this class, you can create a new instance and call its methods as needed:
-
-
+// Example usage:
 const channel = new MessageChannel();
 
 function handleData(data) {
-    console.log($, { data });
+    console.log("Received data:", data);
 }
 
 channel.subscribe('data', handleData);

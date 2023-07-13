@@ -1,23 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Button } from 'react-native';
 import UserProfile from '../components/JS/UserProfile';
+import sideMenu from '../components/JS/sideMenu';
+import SearchInput from '../components/JS/searchInput';
 
 function NavigationBar() { 
+    // Create a new state variables "isMenuOpen" and "isSearchOpen"
+    const [isMenuOpen, setMenuOpen] = useState(false);  
+    const [isSearchOpen, setSearchOpen] = useState(false); 
 
-    const handleMenuClick = () => { 
+    const handleMenuClick = () => {
         console.log("Menu button clicked");
-        // Here would go the logic to open the drawer or side menu
+
+        // Toggle the side menu
+        setMenuOpen(!isMenuOpen);
     }
 
-    const handleSearchClick = () => { 
+    const handleSearchClick = () => {
         console.log("Search button clicked");
-        // Here would go the logic to open the search input or navigate to the search screen
+        
+        // Toggle the search input
+        setSearchOpen(!isSearchOpen);    
     }
 
     return ( 
         <View> 
             <Button title="Menu" onPress={handleMenuClick} /> 
-            <Button title="Search" onPress={handleSearchClick} /> 
+            
+            {/* Conditional rendering of side menu */}
+            {isMenuOpen && <sideMenu onClose={() => setMenuOpen(false)} /> }
+            
+            <Button title="Search" onPress={handleSearchClick} />
+            
+            {/* Conditional rendering of search input */}
+            {isSearchOpen && <Text>Search Input Here!</Text>}           
         </View> 
     ); 
 } 
