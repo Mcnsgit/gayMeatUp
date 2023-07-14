@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, Button, GestureResponderEvent } from 'react-native';
 import UserProfile from '../components/JS/UserProfile';
 import NavigationBar from '../components/JS/NavigationBar';
-import FooterBar from '../components/JS/FooterBar';
+import FooterBar from '../components/JS/footerBar';
 function HomePage() { 
     const [users, setUsers] = useState([]); 
     const fetchUsers = async () => { 

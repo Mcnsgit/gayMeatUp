@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Button } from 'react-native';
-import SideMenu from '../components/SideMenu';
-import SearchInput from '../components/SearchInput';
+import SideMenu from '../components/JS/sideMenu';
+import SearchInput from '../components/JS/searchInput';
 
 function NavigationBar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
