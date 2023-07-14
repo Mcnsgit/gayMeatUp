@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 
-function footerBar() {
+function FooterBar() {
 
     const handleUsersClick = () => {
         console.log("Users button clicked");
@@ -33,5 +33,5 @@ function footerBar() {
 
 
 
-export default footerBar
+export default FooterBar
 
