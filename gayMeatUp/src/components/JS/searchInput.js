@@ -1,3 +1,4 @@
+// src/components/SearchInput.js
 import React, { useState } from 'react';
 import { TextInput, Button, View } from 'react-native';
 
@@ -20,4 +21,5 @@ function SearchInput({ onSearch }) {
         </View>
     );
 }
+
 export default SearchInput;
